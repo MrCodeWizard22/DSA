@@ -10,10 +10,11 @@ void rep(string s){
         rep(ros);
         cout<<ros;
     }
+    return;
 }
 int main()
 {
-    string a="piyush";
+    string a="piyupishpi";
     rep(a);
 
     return 0;

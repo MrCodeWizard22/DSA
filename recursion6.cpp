@@ -10,6 +10,7 @@ void rev(string s){
 int main()
 {
     string a="piyush";
+   
     rev(a);
 
     return 0;
