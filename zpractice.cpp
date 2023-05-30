@@ -1,31 +1,32 @@
+// peak index in a montain array
 #include<iostream>
 using namespace std;
-int search(int a[], int n, int key){
-  int s=0;
-  int e=n-1,mid;
-   mid=(s+e)/2;
-  while(s<=e){
-   
-    if(a[mid]==key){
-      return mid;
-    }
-    else if(a[mid]>key){
-      e=mid-1;
-    }
-    else 
-    mid=s+1;
-    
-  }
-  return -1;
-}
-
 int main()
 {
-  int a;
+  int a[100];
+    int n,temp,s=0;
+    cin>>n;
+    for(int i=0;i<n;i++)
+        cin>>a[i];
+    for(int i=0;i<n;i++){
 
-  int arr[7]={2,3,4,5,6,7,8};
-  
-  cout<<search(arr,7,6);
-  return 0;
+        for(int j=i;j<n;j++){
+            if(a[i]>a[j]){
+                    temp=a[i];
+                a[i]=a[j];
+                a[j]=temp;
+            }
+        }
+    }
+    for(int i=0;i<n;i++){
 
+        if((a[i+1]-a[i])>1)
+        {
+
+            s=a[i]+1;
+            break;
+        }
+    }
+    cout<<s<<endl;
+    return 0;
 }
