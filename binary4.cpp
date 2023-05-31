@@ -18,6 +18,6 @@ int search(int a[],int n){
 int main()
 {
     int arr[6]={7,9,10,1,2,3};
-    cout<<"pivot element is  "<<arr[search(arr,6)];
+    cout<<"pivot element is  a"<<arr[search(arr,6)];
     return 0;
 }
