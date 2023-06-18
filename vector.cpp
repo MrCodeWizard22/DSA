@@ -1,4 +1,4 @@
-// trying the questions of arrays in new way
+// trying reverse of a vector in new way
 #include<iostream>
 #include<vector>
 using namespace std;
