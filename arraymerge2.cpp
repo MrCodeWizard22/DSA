@@ -15,7 +15,7 @@ void merge(vector<int>&v1,int n,vector <int>&v2,int m,vector <int>&ans){
         }
     }
     for (int i:ans)
-    cout<<" "<<i;
+    std::cout<<" "<<i;
 }
 int main()
 {
