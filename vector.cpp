@@ -2,20 +2,19 @@
 #include<iostream>
 #include<vector>
 using namespace std;
-vector<int> reverse(vector<int>v){
+void reverse(vector<int> &v){
     int s=0;
     int e=v.size()-1;
     while(s<=e){
         swap(v[s],v[e]);
         s++;
         e--;
-
+ṇṇ
     }
-    return v;
 }
 void display(vector<int>v){
     for (int i=0;i<v.size();i++)
-        cout<<" "<<v[i];
+        std::cout<<" "<<v[i];
 }
 int main()
 {
@@ -26,7 +25,7 @@ int main()
     v.push_back(4);
     v.push_back(5);
 
-    vector <int> ans=reverse(v);
-    display(ans);
+    reverse(v);
+    display(v);
     return 0;
 }
