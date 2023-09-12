@@ -1,3 +1,4 @@
+// search element in rotated array 
 #include<iostream>
 using namespace std;
 int pivot(int a[],int n){
