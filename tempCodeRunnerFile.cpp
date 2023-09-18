@@ -1,4 +1,3 @@
- for(int i:nums)
-        cout<<"  "<<i;
-
-        cout<<endl;
+hero(){
+    cout<<"a constructor made"<<endl;
+}
