@@ -1,3 +1,4 @@
+// insertion aat head and tail
 #include<bits/stdc++.h>
 using namespace std;
 class node {
@@ -30,6 +31,29 @@ void print (node *&head ){
     }
     cout<<endl;
 }
+void insertatpos(node * &head, node *&tail,int position , int d){
+    if(position==1){
+        insert(head,d);
+        return;
+    }
+    node *temp=head;
+    int count =1;
+    while(count <position-1){
+        temp=temp->next;
+        count++;
+    }
+
+    if(temp->next==NULL){
+        insertattail(tail,d);
+        return;
+    }
+    // if(temp->next!=NULL)
+    // cout<<"tempnext"<<temp->next<<endl;
+    node *newnode =new node(d); 
+    newnode->next=temp->next;
+    temp->next=newnode;
+    
+}
 int main()
 {
     node *start=new node (10);
@@ -43,11 +67,11 @@ int main()
     print (head);
 
     // taking the input of node from the user and then inserting it in the begining
-    int n;
-    cout<<"enter the node data to insert int the front ";
-    cin>>n;
+    // int n;
+    // cout<<"enter the node data to insert int the front ";
+    // cin>>n;
 
-    insert(head, n);
+    insert(head, 40);
     print (head);
 
     // inserting the element at the tail 
@@ -56,6 +80,15 @@ int main()
     print (head);
 
 
+    // insertion in middle 
+    // int postion=2;
+    insertatpos(head, tail, 2, 60);
+    print (head);
 
+    insertatpos(head,tail, 1,11);
+    print (head);
+
+    insertatpos(head ,tail,7,18);
+    print (head);
     return 0;
 }
