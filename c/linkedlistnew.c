@@ -4,25 +4,26 @@ struct node {
     int data ;
     struct node *next;
 };
-struct node* insert(struct node *head ,int data ){
-    struct node *temp=(struct node *) malloc (sizeof (struct node));
+void insert(struct node ** head ,int data ){
+    struct node *temp=(struct node* )malloc (sizeof(struct node ));
     temp->data=data;
-    temp->next =head ;
-    head=temp;
-    return head;
+    temp->next =*head;
+    *head=temp; 
 }
-void print (struct node *head ){
-    struct node *new = head;
-    while(new->next!=0){
-        printf("%d-->",new->data);
-        new=new->next;
+void print (struct node **head){
+    struct node *ptr=*head;
+    while(ptr->next!=0){
+        printf("%d-->",ptr->data);
+        ptr=ptr->next;
     }
-    printf("%d",new->data);
+    printf("%d",ptr->data);
 }
 int main(){
-    struct node *head =  NULL;
-    head = insert(head ,1);
-    head = insert(head,2);
-    print(head);
+    struct node *head=0;
+    insert(&head, 8);
+    // print (&head);
+    insert(&head ,10);
+    print (&head);
+   
     return 0;
 }
