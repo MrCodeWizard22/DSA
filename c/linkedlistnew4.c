@@ -1,3 +1,4 @@
+// learning deletion of node from linked list
 #include<stdio.h>
 #include<stdlib.h>
 struct node {

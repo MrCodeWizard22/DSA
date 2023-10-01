@@ -1,3 +1,4 @@
+// finding length of the linked list 
 #include<stdlib.h>
 #include <stdio.h>
 struct node {
