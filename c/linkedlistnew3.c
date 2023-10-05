@@ -25,7 +25,7 @@ void insertpos(struct node ** head,int data, int pos){
 
     }
 
-    while(temp->next !=0 && index <pos){
+    while(temp->next !=0 && index <pos-1){
         prev=temp;
         temp=temp->next;
         index++;
@@ -36,8 +36,9 @@ void insertpos(struct node ** head,int data, int pos){
         temp->next =newnode;
     }
     else {
-        newnode ->next=prev->next;
-        prev->next =newnode ;
+        prev->next=newnode;
+        newnode ->next=temp;
+        // prev->next =newnode ;
     }
 
 
@@ -58,7 +59,7 @@ int main()
     inserthead(&head ,10);
     inserthead(&head,80);
     insertpos(&head,15,2);
-    insertpos(&head,100,10);
+    // insertpos(&head,100,10);
     print (&head);
 
     return 0;
