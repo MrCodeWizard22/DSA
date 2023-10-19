@@ -11,16 +11,16 @@ int main() {
         cin >> arr[i];
     }
 
-    int part_size = n / 3;
-    for (int i = 0; i < part_size; i++) {
+    int part = n / 3;
+    for (int i = 0; i < part; i++) {
         cout << arr[i] << " ";
     }
     cout << endl;
-    for (int i = part_size; i < 2 * part_size; i++) {
+    for (int i = part; i < 2 * part; i++) {
         cout << arr[i] << " ";
     }
     cout << endl;
-    for (int i = 2 * part_size; i < n; i++) {
+    for (int i = 2 * part; i < n; i++) {
         cout << arr[i] << " ";
     }
     cout << endl;
