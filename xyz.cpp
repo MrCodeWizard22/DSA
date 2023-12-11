@@ -1,39 +1,54 @@
-#include <bits/stdc++.h>
-using namespace std;
+#include<bits/stdc++.h>
+using namespace std; 
 
-bool pall(int num) {
-    string str = to_string(num);
-    stack<char> stk;
+const int size = 100;
 
-    for (int i= 0; i <str.length()/2;i++) {
-        stk.push(str[i]);
-    }
-    int start;
 
-    if(str.length()%2==0)
-    start =str.length()/2;
-    else 
-    start=str.length()/2+1;
+int fun(int key) {
+    return key % size;
+}
 
-    for (int i =start;i<str.length() && !stk.empty(); i++) {
-        if (stk.top() != str[i]) {
-            return false;
-        }
-        stk.pop();
-    }
+void insert(vector<int>& table, int key) {
+    int index = fun(key);
+    table[index] = key;
+}
 
-    return true;
+void remove(vector<int>& table, int key) {
+    int index = fun(key);
+    table[index] = -1; 
+}
+
+bool search(vector<int>& table, int key) {
+    int index = fun(key);
+    return table[index] == key;
 }
 
 int main() {
-    int n;
-    cin >> n;
+    vector<int> table(size, -1);
+    int val;
+    insert(table, 5);
+    insert(table, 20);
+    insert(table, 42);
 
-    if (pall(n)) {
-        cout << "true" << endl;
-    } else {
-        cout << "false" << endl;
-    }
+    
+
+    cout << "Key 5: "<<(search(table, 5) ? "Found" : "Not Found")<<endl;
+    cout << "Key 10: "<<(search(table, 10) ? "Found" : "Not Found")<<endl;
+
+    cout<<"enter the key to insert "<<endl;
+    cin>>val;
+
+    insert(table,val);
+    cout << "Key"<<val<<(search(table, val) ? "Found" : "Not Found")<<endl;
+    remove(table, 20);
+    
+
+    cout << "Key 20: " <<(search(table, 20) ? "Found" : "Not Found")<<endl;
+    cout<<"enter the value to remove "<<endl;
+    cin>>val;
+    remove(table,val);
+    cout << "Key"<<val<<(search(table, val) ? "Found" : "Not Found")<<endl;
+
 
     return 0;
 }
